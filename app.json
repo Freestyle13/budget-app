@@ -1,11 +1,12 @@
 {
   "expo": {
-    "name": "budget-app",
+    "name": "Budget",
     "slug": "budget-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
+    "scheme": "budget-app",
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",

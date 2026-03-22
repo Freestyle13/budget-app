@@ -1,7 +1,7 @@
 {
   "name": "budget-app",
   "version": "1.0.0",
-  "main": "index.ts",
+  "main": "expo-router/entry",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
@@ -9,13 +9,33 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "expo": "~55.0.8",
-    "expo-status-bar": "~55.0.4",
-    "react": "19.2.0",
-    "react-native": "0.83.2"
+    "@expo/vector-icons": "^15.0.3",
+    "@react-native-async-storage/async-storage": "2.2.0",
+    "@types/papaparse": "^5.5.2",
+    "date-fns": "^3.6.0",
+    "drizzle-orm": "^0.45.1",
+    "expo": "~54.0.0",
+    "expo-document-picker": "~14.0.8",
+    "expo-linking": "^55.0.8",
+    "expo-router": "~6.0.23",
+    "expo-sqlite": "~16.0.10",
+    "expo-status-bar": "~3.0.9",
+    "papaparse": "^5.5.3",
+    "react": "19.1.0",
+    "react-hook-form": "^7.54.0",
+    "react-native": "0.81.5",
+    "react-native-reanimated": "~4.1.1",
+    "react-native-safe-area-context": "~5.6.0",
+    "react-native-screens": "~4.16.0",
+    "react-native-svg": "15.12.1",
+    "react-native-worklets": "^0.8.1",
+    "zod": "^3.24.0",
+    "zustand": "^5.0.2"
   },
   "devDependencies": {
-    "@types/react": "~19.2.2",
+    "@expo/ngrok": "^4.1.0",
+    "@types/react": "~19.1.10",
+    "drizzle-kit": "^0.31.10",
     "typescript": "~5.9.2"
   },
   "private": true
