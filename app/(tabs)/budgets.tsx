@@ -34,6 +34,7 @@ export default function BudgetsScreen() {
 
   const budgetedItems = summary.filter((s) => s.limit != null);
   const unbudgetedItems = summary.filter((s) => s.limit == null && s.spent > 0);
+  const unusedItems = summary.filter((s) => s.limit == null && s.spent === 0 && !s.category.isIncome);
 
   const ringData = budgetedItems.map((item) => ({
     label: item.category.name,
@@ -167,6 +168,32 @@ export default function BudgetsScreen() {
                 >
                   <CategoryIcon icon={cat.icon} color={cat.color} />
                   <Text style={[styles.catName, { flex: 1, marginLeft: 12 }]}>{cat.name}</Text>
+                  <Ionicons name="chevron-forward" size={16} color="#C7C7CC" />
+                </TouchableOpacity>
+              ))}
+            </View>
+          </>
+        )}
+
+        {/* Unused categories — no spending, no limit */}
+        {unusedItems.length > 0 && (
+          <>
+            <Text style={styles.sectionHeader}>Unused</Text>
+            <View style={styles.card}>
+              {unusedItems.map((item, i) => (
+                <TouchableOpacity
+                  key={item.category.id}
+                  style={[styles.row, i < unusedItems.length - 1 && styles.rowBorder]}
+                  onPress={() =>
+                    router.push({
+                      pathname: '/modals/add-category',
+                      params: { id: item.category.id.toString() },
+                    })
+                  }
+                  activeOpacity={0.7}
+                >
+                  <CategoryIcon icon={item.category.icon} color={item.category.color} />
+                  <Text style={[styles.catName, { flex: 1, marginLeft: 12 }]}>{item.category.name}</Text>
                   <Ionicons name="chevron-forward" size={16} color="#C7C7CC" />
                 </TouchableOpacity>
               ))}
